@@ -1,0 +1,28 @@
+# Operating System Files 
+**/.DS_Store  # macOS-specific desktop files
+**/Thumbs.db  # Windows image thumbnails
+
+# IDE and Editor Files
+.idea/        # JetBrains IDEs like IntelliJ, PyCharm
+.vscode/      # Visual Studio Code settings
+*.sublime-workspace  # Sublime Text workspaces
+
+# Build Output
+**/bin/
+**/build/
+**/dist/
+**/out/
+**/target/
+
+# Logs and Temporary Files
+*.log
+*.tmp
+*.temp
+
+# Dependency Directories
+**/node_modules/   # Node.js dependencies
+**/venv/          # Python virtual environments
+
+# Python-specific Files
+*.pyc             # Python compiled bytecode
+__pycache__/      # Python compiled files 
