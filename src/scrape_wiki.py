@@ -1,8 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
+import sys  # For command-line arguments
 
-def scrape_elden_ring_wiki():
+
+def scrape_wiki(url):
     base_url = "https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki"
+    base_url = url
     response = requests.get(base_url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -12,9 +15,19 @@ def scrape_elden_ring_wiki():
     # Extract and print text from each element 
     for element in text_elements:
         text = element.get_text(strip=True)
-        if text:  # Avoid printing empty strings
+        if text:
             print(text)
+            
+            
+    with open("scraped_text.txt", "w", encoding="utf-8") as f:
+        for element in text_elements:
+            text = element.get_text(strip=True)
+            f.write(text + "\n")  # Add newline for paragraphs 
      
      
 if __name__ == "__main__":      
-    scrape_elden_ring_wiki()
+    if len(sys.argv) > 1:
+        url = sys.argv[1] 
+        scrape_wiki(url)
+    else:
+        print("Please provide a wiki page URL.")

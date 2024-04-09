@@ -26,3 +26,5 @@
 # Python-specific Files
 *.pyc             # Python compiled bytecode
 __pycache__/      # Python compiled files 
+
+/venv
